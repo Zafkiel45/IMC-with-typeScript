@@ -2,9 +2,18 @@ const myButton = document.querySelector("#button") as HTMLButtonElement;
 const myInputHeight = document.querySelector("#altura") as HTMLInputElement;
 const myInputWeight = document.querySelector("#peso") as HTMLInputElement;
 const result = document.querySelector("#result") as HTMLDivElement;
+const imcResult = document.querySelector("#imc") as HTMLDivElement;
 
 myButton.addEventListener('click', ():void => {
-    const IMC: number = Number(myInputWeight.value) / Number(myInputHeight.value);
-    result.style.display = 'block';
-    result.textContent = `SEU IMC É - ${IMC.toFixed(2)}`
+    if(myInputHeight.value === '' || myInputWeight.value === '') {
+        window.alert('ERRO - Os campos não podem estar vazios');
+    } else {
+        const height = parseFloat(myInputHeight.value);
+        const weight = parseFloat(myInputWeight.value);
+
+        let IMC: number = weight / (height * height);
+
+        imcResult.style.display = 'block';
+        imcResult.textContent = `O seu IMC é: - ${IMC.toFixed(2)}`
+    }
 })

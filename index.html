@@ -4,10 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IMC</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div>
-        <button id="button">Click for to show more</button>
+    <div class="container_main">
+        <div class="container_title">
+            <h1 class="title">Calcule seu IMC!</h1>
+        </div>
+        <div class="container_inputs">
+            <label for="altura" class="label">Altura</label>
+            <input type="number" class="input_Style" id="altura" placeholder="Digite sua altura...">
+            <label for="peso" class="label">Peso</label>
+            <input type="number" class="input_Style" id="peso" placeholder="Digite seu peso...">
+        </div>
+        <div class="button_container">
+            <button id="button" class="button">
+                Calcular IMC
+            </button>
+        </div>
+        <div id="result" class="result">
+
+        </div>
     </div>
 </body>
+<script src="src/script.js"></script>
 </html>

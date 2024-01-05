@@ -10,10 +10,13 @@ myButton.addEventListener('click', ():void => {
     } else {
         const height = parseFloat(myInputHeight.value);
         const weight = parseFloat(myInputWeight.value);
-
-        let IMC: number = weight / (height * height);
-
-        imcResult.style.display = 'block';
-        imcResult.textContent = `O seu IMC é: - ${IMC.toFixed(2)}`
+        if(isNaN(height) || isNaN(weight)) {
+            window.alert('insira valores numéricos corretos');
+        } else {
+            let IMC: number = weight / (height * height);
+    
+            imcResult.style.display = 'block';
+            imcResult.textContent = `O seu IMC é: ${IMC.toFixed(2)}`
+        }
     }
 })

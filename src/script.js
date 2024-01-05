@@ -10,9 +10,14 @@ myButton.addEventListener('click', function () {
     else {
         var height = parseFloat(myInputHeight.value);
         var weight = parseFloat(myInputWeight.value);
-        var IMC = weight / (height * height);
-        imcResult.style.display = 'block';
-        imcResult.textContent = "O seu IMC \u00E9: - ".concat(IMC.toFixed(2));
+        if (isNaN(height) || isNaN(weight)) {
+            window.alert('insira valores numéricos corretos');
+        }
+        else {
+            var IMC = weight / (height * height);
+            imcResult.style.display = 'block';
+            imcResult.textContent = "O seu IMC \u00E9: ".concat(IMC.toFixed(2));
+        }
     }
 });
 //# sourceMappingURL=script.js.map
